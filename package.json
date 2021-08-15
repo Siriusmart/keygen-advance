@@ -1,6 +1,6 @@
 {
-  "name": "keygen-advance-npm-package",
-  "version": "1.0.0",
+  "name": "keygen-advance",
+  "version": "1.0.3",
   "description": "An advance key generator",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,14 @@
     "url": "git+https://github.com/Siriusmart/keygen-advance.git"
   },
   "keywords": [
-    "https://github.com/Siriusmart/keygen-advance/blob/master/LICENSE"
+    "keygen",
+    "key",
+    "gen",
+    "random-string",
+    "string",
+    "javascript",
+    "nodejs",
+    "random-key"
   ],
   "author": "https://youtube.com/siriusmart",
   "license": "MIT",

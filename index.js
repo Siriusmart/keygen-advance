@@ -336,5 +336,3 @@ module.exports.allowNumbers = allowNumbers;
 module.exports.logErrors = logErrors;
 module.exports.disableFilter = disableFilter;
 module.exports.gen = gen;
-
-"keygen-advance v1.0.0"
