@@ -320,3 +320,21 @@ function gen(length) {
 
 module.exports.getList = getList;
 module.exports.setList = setList;
+module.exports.getExcluded = getExcluded;
+module.exports.setExcluded = setExcluded;
+module.exports.getExtra = getExtra;
+module.exports.setExtra = setExtra;
+module.exports.exclude = exclude;
+module.exports.allow = allow;
+module.exports.add = add;
+module.exports.remove = remove;
+module.exports.reset = reset;
+module.exports.allowUpperCase = allowUpperCase;
+module.exports.allowLowerCase = allowLowerCase;
+module.exports.allowSymbols = allowSymbols;
+module.exports.allowNumbers = allowNumbers;
+module.exports.logError = logError;
+module.exports.enableFilter = enableFilter;
+module.exports.gen = gen;
+
+"keygen-advance v1.0.0"
