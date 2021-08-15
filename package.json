@@ -1,6 +1,6 @@
 {
   "name": "keygen-advance",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An advance key generator",
   "main": "index.js",
   "scripts": {

@@ -3,10 +3,15 @@
 Generate a random string with advance customisation
 
 # Installation
-
-`npm i keygen-advance`
-
-Then...
+If you for some reason haven't initialize your project yet, do it
+```
+npm init -y
+```
+Now install the package
+```
+npm i keygen-advance
+```
+Now make a const
 ```
 const keygen = require(keygen-advance)
 ```
