@@ -29,15 +29,15 @@ function genList() {
 		if (aNumbers) {
 			fullList = fullList.concat(numbers);
 		}
+		extra.forEach(item => {
+			if (!fullList.includes(item)) {
+				fullList.push(item);
+			}
+		});
 		excluded.forEach(item => {
 			const index = fullList.indexOf(item);
 			if (index != -1) {
 				fullList.splice(index, 1);
-			}
-		});
-		extra.forEach(item => {
-			if (!fullList.includes(item)) {
-				fullList.push(item);
 			}
 		});
 	} catch (err) {
@@ -283,7 +283,7 @@ function logErrors(bool) {
 	}
 }
 
-function enableFilter(bool) {
+function disableFilter(bool) {
 	try {
 		if (typeof bool == 'boolean') {
 			eFilter = bool;
@@ -334,7 +334,7 @@ module.exports.allowLowerCase = allowLowerCase;
 module.exports.allowSymbols = allowSymbols;
 module.exports.allowNumbers = allowNumbers;
 module.exports.logErrors = logErrors;
-module.exports.enableFilter = enableFilter;
+module.exports.disableFilter = disableFilter;
 module.exports.gen = gen;
 
 "keygen-advance v1.0.0"
