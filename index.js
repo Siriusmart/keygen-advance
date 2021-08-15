@@ -268,12 +268,12 @@ function allowNumbers(bool) {
 	}
 }
 
-function logErr(bool) {
+function logErrors(bool) {
 	try {
 		if (typeof bool == 'boolean') {
 			logError = bool;
 		} else if (logError) {
-			console.log('Err: logErr(...) boolean expected');
+			console.log('Err: logErrors(...) boolean expected');
 		}
 		genList();
 	} catch (err) {
@@ -333,7 +333,7 @@ module.exports.allowUpperCase = allowUpperCase;
 module.exports.allowLowerCase = allowLowerCase;
 module.exports.allowSymbols = allowSymbols;
 module.exports.allowNumbers = allowNumbers;
-module.exports.logError = logError;
+module.exports.logErrors = logErrors;
 module.exports.enableFilter = enableFilter;
 module.exports.gen = gen;
 
