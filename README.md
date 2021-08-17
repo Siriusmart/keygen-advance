@@ -48,10 +48,24 @@ Log errors (Warning: if this is disabled, no errors would be generated from this
 
 Enable/disable a filter to prevent random string from including any word from the `filter` array (will get to that in a moment) from generating.
 
+* `keygen.setDefault(length)`
+
+Set the default length of your random string if length is not specified
+
 ## Basics
 * `keygen.gen(length)`
 
 Generate a random string with specified length
+
+* `keygen.url(length)`
+
+Generate a url friendly random string
+
+#### Note
+
+`length` can also be `keygen.short`, `keygen.medium`, `keygen.long` and `keygen.default`
+
+If the parameter `length` is undefined, it will be `keygen.default` by default, you can change the value of `keygen.default` with `keygen.setDefault()`
 
 * `keygen.reset()`
 
