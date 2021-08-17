@@ -1,7 +1,7 @@
 {
   "name": "keygen-advance",
-  "version": "1.0.4",
-  "description": "An advance key generator",
+  "version": "1.0.5",
+  "description": "An easy to use key generator with advance options",
   "main": "index.js",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"

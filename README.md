@@ -18,6 +18,46 @@ const keygen = require(keygen-advance)
 
 Source: [GitHub](https://github.com/Siriusmart/keygen-advance)
 
+## Basics
+* `keygen.gen(length)`
+
+Generate a random string with specified length
+
+* `keygen.gen(length,chars)`
+
+Generate a random string with specified length, using specified characters from the `chars` array
+
+* `keygen.url(length)`
+
+Generate a url friendly random string
+
+* `keygen.SHA256()`
+
+Generate a SHA256 key
+
+* `keygen.SHA512()`
+
+Generate a SHA512 key
+
+* `keygen.key(length)`
+
+Generate a hex hash key with custom length
+
+#### Length
+
+These values can also be the length of the random string
+
+* `keygen.short`
+* `keygen.medium`
+* `keygen.long`
+* `keygen.default`
+
+If no parameters are passed into `length`
+
+* `keygen.reset()`
+
+Reset all settings, useful if you think you messed up some settings, this function will also clear all content in lists (will get to that in a moment)
+
 ## Options
 
 keygen-advance allows you to customise the string generated.
@@ -51,25 +91,6 @@ Enable/disable a filter to prevent random string from including any word from th
 * `keygen.setDefault(length)`
 
 Set the default length of your random string if length is not specified
-
-## Basics
-* `keygen.gen(length)`
-
-Generate a random string with specified length
-
-* `keygen.url(length)`
-
-Generate a url friendly random string
-
-#### Note
-
-`length` can also be `keygen.short`, `keygen.medium`, `keygen.long` and `keygen.default`
-
-If the parameter `length` is undefined, it will be `keygen.default` by default, you can change the value of `keygen.default` with `keygen.setDefault()`
-
-* `keygen.reset()`
-
-Reset all settings, useful if you think you messed up some settings, this function will also clear all content in lists (will get to that in a moment)
 
 ## Lists
 

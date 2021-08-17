@@ -2,7 +2,7 @@ const upperCase = 'QWERTYUIOPASDFGHJKLZXCVBNM'.split('');
 const lowerCase = 'qwertyuiopasdfghjklzxcvbnm'.split('');
 const numbers = '1234567890'.split('');
 const symbols = '@#£&*()\'"%-+=/;:,.€$¥_^[]{}§|~…\\<>!?'.split('');
-const twoto256 = 1.15792089237e76;
+const sha = '1234567890abcdef'.split('');
 
 var short = 11;
 var medium = 22;
@@ -341,23 +341,33 @@ function disableFilter(bool) {
 	}
 }
 
-function gen(length) {
+function gen(length, chars) {
 	try {
 		var out = '';
-		if (!length) {
-			fixDefault();
-			length = def;
-		}
-		for (var i = 0; i < length; i++) {
-			out += fullList[Math.floor(Math.random() * fullList.length)];
-		}
-		if (!disFilter) {
-			filter.forEach(item => {
-				if (out.includes(item)) {
-					out = gen(length);
+		if (length) {
+			if (chars) {
+				if (Array.isArray(chars)) {
+					for (var i = 0; i < length; i++) {
+						out += chars[Math.floor(Math.random() * chars.length)];
+					}
+				} else {
+					throw new Error(
+						'gen(length,...) array expected, found ' + typeof chars
+					);
 				}
-			});
+			} else {
+				for (var i = 0; i < length; i++) {
+					out += fullList[Math.floor(Math.random() * fullList.length)];
+				}
+			}
+		} else {
+			out = gen(def);
 		}
+		filter.forEach(item => {
+			if (out.includes(item)) {
+				out = gen(length, char);
+			}
+		});
 		return out;
 	} catch (err) {
 		if (logError) {
@@ -390,7 +400,55 @@ function url(length) {
 		if (aSymbols != original) {
 			allowSymbols(original);
 		}
+		filter.forEach(item => {
+			if (out.includes(item)) {
+				out = url(length);
+			}
+		});
 		return out;
+	} catch (err) {
+		if (logError) {
+			console.log(err);
+		}
+	}
+}
+
+function SHA256() {
+	try {
+		var out = '';
+		for (var i = 0; i < 64; i++) {
+			out += sha[Math.floor(Math.random() * sha.length)];
+		}
+		return out;
+	} catch (err) {
+		if (logError) {
+			console.log(err);
+		}
+	}
+}
+
+function SHA512() {
+	try {
+		var out = '';
+		for (var i = 0; i < 128; i++) {
+			out += sha[Math.floor(Math.random() * sha.length)];
+		}
+		return out;
+	} catch (err) {
+		if (logError) {
+			console.log(err);
+		}
+	}
+}
+
+function key(length) {
+	try {
+		var out = '';
+		for (var i = 0; i < length; i++) {
+			out += sha[Math.floor(Math.random() * sha.length)];
+
+			return out;
+		}
 	} catch (err) {
 		if (logError) {
 			console.log(err);
@@ -416,5 +474,12 @@ module.exports.allowNumbers = allowNumbers;
 module.exports.logErrors = logErrors;
 module.exports.disableFilter = disableFilter;
 module.exports.gen = gen;
+module.exports.url = url;
 module.exports.setDefault = setDefault;
 module.exports.default = def;
+module.exports.short = short;
+module.exports.meduim = medium;
+module.exports.long = long;
+module.exports.SHA256 = SHA256;
+module.exports.SHA512 = SHA512;
+module.exports.key = key;
