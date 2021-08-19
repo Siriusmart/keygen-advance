@@ -1,7 +1,7 @@
 {
   "name": "keygen-advance",
-  "version": "1.0.5",
-  "description": "An easy to use key generator with advance options",
+  "version": "1.0.6",
+  "description": "Generate highly customisable unique string/hex/url-friendly keys (Suggest any related features thanks)",
   "main": "index.js",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
@@ -18,7 +18,8 @@
     "string",
     "javascript",
     "nodejs",
-    "random-key"
+    "random-key",
+    "unique"
   ],
   "author": "https://youtube.com/siriusmart",
   "license": "MIT",

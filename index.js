@@ -234,6 +234,7 @@ function reset() {
 		aSymbols = true;
 		aNumbers = true;
 		logError = true;
+		def = 11;
 		genList();
 	} catch (err) {
 		if (logError) {
@@ -341,6 +342,22 @@ function disableFilter(bool) {
 	}
 }
 
+function setFilter(list){
+    try{
+    if(Array.isArray(list)){
+        filter = list;
+    } else{
+        throw new Error(
+				'setFilter(...) array expected, found ' + typeof list
+			);
+    }
+    }catch(err){
+        if(logError){
+            console.log(err);
+        }
+    }
+}
+
 function gen(length, chars) {
 	try {
 		var out = '';
@@ -441,19 +458,25 @@ function SHA512() {
 	}
 }
 
-function key(length) {
-	try {
+function hex(length){
+    try {
+        if(length==undefined){
+            length = def;
+        }
 		var out = '';
 		for (var i = 0; i < length; i++) {
 			out += sha[Math.floor(Math.random() * sha.length)];
-
-			return out;
 		}
+		return out;
 	} catch (err) {
 		if (logError) {
 			console.log(err);
 		}
 	}
+}
+
+function key(length) {
+	return hex(length);
 }
 
 module.exports.getList = getList;
@@ -478,8 +501,10 @@ module.exports.url = url;
 module.exports.setDefault = setDefault;
 module.exports.default = def;
 module.exports.short = short;
-module.exports.meduim = medium;
+module.exports.medium = medium;
 module.exports.long = long;
 module.exports.SHA256 = SHA256;
 module.exports.SHA512 = SHA512;
 module.exports.key = key;
+module.exports.hex = hex;
+module.exports.setFilter = setFilter;
